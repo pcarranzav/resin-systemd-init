@@ -25,7 +25,6 @@ RUN systemctl mask \
     
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
-#ENTRYPOINT [ "/sbin/init" ]
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
