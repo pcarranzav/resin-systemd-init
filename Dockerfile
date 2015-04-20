@@ -1,7 +1,7 @@
 #Base image
 FROM resin/rpi-raspbian:jessie
 
-RUN apt-get update && apt-get install -y sudo usbutils net-tools iputils-ping module-init-tools
+RUN apt-get update && apt-get install -y sudo usbutils net-tools iputils-ping module-init-tools ifupdown 
 
 # systemd configuration
 
@@ -29,4 +29,10 @@ ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
 
+RUN apt-get update && apt-get install -y python python-dev python-pip
 
+RUN pip install flask
+
+COPY main.py /usr/src/app/main.py
+
+CMD ["python", "/usr/src/app/main.py"]
