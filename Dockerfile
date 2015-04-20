@@ -33,6 +33,6 @@ RUN apt-get update && apt-get install -y python python-dev python-pip
 
 RUN pip install flask
 
-COPY main.py /usr/src/app/main.py
+COPY hello.py /usr/src/app/hello.py
 
-CMD ["python", "/usr/src/app/main.py"]
+CMD ["python", "/usr/src/app/hello.py"]
