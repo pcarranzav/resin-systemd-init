@@ -1,0 +1,11 @@
+[Unit]
+Description=OS-init
+
+[Service]
+WorkingDirectory=/usr/bin/
+EnvironmentFile=/etc/docker.env
+ExecStart=/etc/docker.cmd
+StandardOutput=syslog+console
+
+[Install]
+WantedBy=basic.target
