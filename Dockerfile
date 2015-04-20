@@ -30,12 +30,4 @@ ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
 
-RUN apt-get update && apt-get install -y python 
-#python-dev python-pip
-
-#RUN pip install flask
-
-COPY main.py /usr/src/app/main.py
-
-CMD ["python", "/usr/src/app/main.py"]
 
