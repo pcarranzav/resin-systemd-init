@@ -2,8 +2,8 @@
 
 env > /etc/docker.env
 
-echo -e "#!/bin/bash\n exec $@" > /etc/docker.cmd
-chmod +x /etc/docker.cmd
+echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
+chmod +x /etc/resinApp.cmd
 
 echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
 
