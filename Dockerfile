@@ -1,7 +1,7 @@
 #Base image
 FROM resin/rpi-raspbian:jessie
 
-RUN apt-get update && apt-get install -y sudo usbutils net-tools iputils-ping
+RUN apt-get update && apt-get install -y sudo usbutils net-tools iputils-ping module-init-tools
 
 # systemd configuration
 
