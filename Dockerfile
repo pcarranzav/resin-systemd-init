@@ -23,14 +23,16 @@ RUN systemctl mask \
     getty.target \
     graphical.target
     
-ENV INITSYSTEM "off"
+
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
 
-RUN apt-get update && apt-get install -y python
+RUN apt-get update && apt-get install -y python libraspberrypi-bin
+
+ENV INITSYSTEM "on"
 
 COPY main.py /usr/src/app/main.py
 
