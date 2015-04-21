@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $INITSYSTEM = "on" ]; then
+if [ "$INITSYSTEM" = "on" ]; then
 	echo Systemd init system enabled:
 	env > /etc/docker.env
 
