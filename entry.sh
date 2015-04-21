@@ -16,5 +16,5 @@ else
 	CMD=$(which $1)
 	shift
 	echo $CMD $@
-	exec /bin/bash -c $@
+	exec "$@"
 fi
