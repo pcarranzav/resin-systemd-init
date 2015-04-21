@@ -32,7 +32,7 @@ ENTRYPOINT ["/usr/bin/entry.sh"]
 
 RUN apt-get update && apt-get install -y python libraspberrypi-bin
 
-ENV INITSYSTEM "on"
+ENV INITSYSTEM on
 
 COPY main.py /usr/src/app/main.py
 
