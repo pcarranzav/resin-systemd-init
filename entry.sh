@@ -13,5 +13,8 @@ if [ $INITSYSTEM = "on" ]; then
 
 	exec /sbin/init
 else
+	CMD=$(which $1)
+	shift
+	echo $CMD $@
 	exec /bin/bash -c $@
 fi
