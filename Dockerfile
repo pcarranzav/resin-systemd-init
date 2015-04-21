@@ -35,5 +35,5 @@ RUN apt-get update && apt-get install -y python libraspberrypi-bin
 ENV INITSYSTEM on
 
 COPY main.py /usr/src/app/main.py
-
-CMD ["python", "/usr/src/app/main.py"]
+COPY start.sh /usr/src/app/start.sh
+CMD ["bash", "/usr/src/app/start.sh"]
