@@ -1,13 +1,17 @@
 #!/bin/bash
 
-env > /etc/docker.env
+if [ $INITSYSTEM = "on" ]; then
+	echo Systemd init system enabled:
+	env > /etc/docker.env
 
-echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
-chmod +x /etc/resinApp.cmd
+	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
+	chmod +x /etc/resinApp.cmd
 
-echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
-echo 'ForwardToWall=no' >> /etc/systemd/journald.conf
+	echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
 
-systemctl enable /etc/systemd/system/launch.service
+	systemctl enable /etc/systemd/system/launch.service
 
-exec /sbin/init
+	exec /sbin/init
+else
+	exec /bin/bash -c
+fi

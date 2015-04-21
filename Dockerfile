@@ -23,6 +23,7 @@ RUN systemctl mask \
     getty.target \
     graphical.target
     
+ENV INITSYSTEM "on"
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
 ENTRYPOINT ["/usr/bin/entry.sh"]
