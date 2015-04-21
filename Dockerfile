@@ -23,17 +23,15 @@ RUN systemctl mask \
     getty.target \
     graphical.target
     
-ENV INITSYSTEM "on"
+ENV INITSYSTEM "off"
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
 
-# RUN apt-get update && apt-get install -y python python-dev python-pip
+RUN apt-get update && apt-get install -y python
 
-# RUN pip install flask
+COPY hello.py /usr/src/app/main.py
 
-# COPY hello.py /usr/src/app/hello.py
-
-# CMD ["python", "/usr/src/app/hello.py"]
+CMD ["python", "/usr/src/app/main.py"]
