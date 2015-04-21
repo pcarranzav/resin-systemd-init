@@ -13,5 +13,5 @@ if [ $INITSYSTEM = "on" ]; then
 
 	exec /sbin/init
 else
-	exec /bin/bash -c
+	exec /bin/bash -c /start
 fi
