@@ -10,6 +10,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
 
 	systemctl enable /etc/systemd/system/launch.service
+	systemctl enable /etc/systemd/system/udevTrigger.service
 
 	exec /sbin/init
 else

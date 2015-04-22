@@ -26,14 +26,15 @@ RUN systemctl mask \
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
+COPY udevTrigger.service /etc/systemd/system/udevTrigger.service
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
 
-RUN apt-get update && apt-get install -y python libraspberrypi-bin
+RUN apt-get update && apt-get install -y python
 
 ENV INITSYSTEM on
 
-COPY main.py /usr/src/app/main.py
-COPY start.sh /usr/src/app/start.sh
+COPY /src/ /usr/src/app/
+
 CMD ["bash", "/usr/src/app/start.sh"]
