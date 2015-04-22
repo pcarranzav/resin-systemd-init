@@ -26,7 +26,7 @@ RUN systemctl mask \
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
-COPY udevTrigger.service /etc/systemd/system/udevTrigger.service
+
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
 ############## USER Dockerfile ###################
