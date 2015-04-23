@@ -9,12 +9,12 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
 
-	udevadm trigger
+	#udevadm trigger
 
 	systemctl enable /etc/systemd/system/launch.service
 	alias resin-app-logs='journalctl -u launch'
 
-	systemctl enable /etc/systemd/system/udev-trigger.service
+	#systemctl enable /etc/systemd/system/udev-trigger.service
 
 	exec /sbin/init
 else
