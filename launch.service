@@ -1,6 +1,6 @@
 [Unit]
 Description=Resin.io User Application
-After=systemd-udev-trigger.service
+Before=udev-trigger.service
 
 [Service]
 WorkingDirectory=/usr/bin/
