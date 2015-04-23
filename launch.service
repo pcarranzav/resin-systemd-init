@@ -5,6 +5,7 @@ Description=Resin.io User Application
 WorkingDirectory=/usr/bin/
 EnvironmentFile=/etc/docker.env
 ExecStart=/etc/resinApp.cmd
+After=systemd-udev-trigger.service
 
 [Install]
 WantedBy=basic.target
