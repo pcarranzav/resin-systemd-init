@@ -9,7 +9,7 @@ ConditionPathIsReadWrite=/sys
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/sbin/admin trigger
+ExecStart=/sbin/udevadm trigger
 
 [Install]
 WantedBy=basic.target
