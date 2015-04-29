@@ -34,7 +34,7 @@ ENTRYPOINT ["/usr/bin/entry.sh"]
 
 RUN apt-get update && apt-get install -y python
 
-ENV INITSYSTEM on
+ENV INITSYSTEM off
 
 COPY /src/ /usr/src/app/
 
