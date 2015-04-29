@@ -21,5 +21,5 @@ else
 	CMD=$(which $1)
 	shift
 	echo $CMD $@
-	exec "$@"
+	exec "$CMD $@"
 fi
