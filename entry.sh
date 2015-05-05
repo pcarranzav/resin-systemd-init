@@ -17,7 +17,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 
 	echo "Starting init..."
-	exec /sbin/init --log-target=null &> /dev/null
+	exec /sbin/init --log-target=null --log-level=0
 else
 	CMD=$(which $1)
 	shift
