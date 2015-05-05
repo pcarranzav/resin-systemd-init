@@ -6,6 +6,7 @@ Before=udev-trigger.service
 WorkingDirectory=/usr/bin/
 EnvironmentFile=/etc/docker.env
 ExecStart=/etc/resinApp.cmd
+StandardOutput=journal+console
 
 
 [Install]

@@ -4,10 +4,10 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo Systemd init system enabled:
 	env > /etc/docker.env
 
-	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
+	echo -e "#\!/bin/bash\n exec $@" > /etc/resinApp.cmd
 	chmod +x /etc/resinApp.cmd
 
-	echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
+	#echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
 
 	#udevadm trigger
 
