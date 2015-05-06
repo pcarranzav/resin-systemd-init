@@ -19,6 +19,5 @@ if [ "$INITSYSTEM" = "on" ]; then
 else
 	CMD=$(which $1)
 	shift
-	echo $CMD $@
 	exec "$CMD" "$@"
 fi
