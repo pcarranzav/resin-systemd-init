@@ -19,6 +19,7 @@ RUN systemctl mask \
     getty@.service \
     systemd-logind.service \
     systemd-remount-fs.service \
+    systemd-udevd.service \
 
     getty.target \
     graphical.target
