@@ -16,6 +16,9 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 
+	echo "This is journald.conf"
+	cat /etc/systemd/journald.conf
+
 	echo "Starting init..."
 	exec /sbin/init --log-target=null --log-level=err
 else
