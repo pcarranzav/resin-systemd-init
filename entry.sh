@@ -15,7 +15,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	alias resin-app-logs='journalctl -u launch'
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
-
+	tty
 	echo "Starting init..."
 	exec /sbin/init quiet
 else
