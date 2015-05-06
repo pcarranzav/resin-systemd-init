@@ -7,7 +7,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "#\!/bin/bash\n exec $@" > /etc/resinApp.cmd
 	chmod +x /etc/resinApp.cmd
 
-	#echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
+	echo 'ForwardToSyslog=no' >> /etc/systemd/journald.conf
 
 	#udevadm trigger
 
@@ -15,9 +15,6 @@ if [ "$INITSYSTEM" = "on" ]; then
 	alias resin-app-logs='journalctl -u launch'
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
-
-	echo "This is journald.conf"
-	cat /etc/systemd/journald.conf
 
 	echo "Starting init..."
 	exec /sbin/init --log-target=null --log-level=err
