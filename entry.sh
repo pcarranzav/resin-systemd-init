@@ -7,7 +7,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "#\!/bin/bash\n exec $@" > /etc/resinApp.cmd
 	chmod +x /etc/resinApp.cmd
 
-	echo 'ForwardToSyslog=no' >> /etc/systemd/journald.conf
+	#echo 'ForwardToConsole=yes' >> /etc/systemd/journald.conf
 
 	#udevadm trigger
 
@@ -17,7 +17,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 
 	echo "Starting init..."
-	exec /sbin/init --log-target=null --log-level=err
+	exec /sbin/init quiet
 else
 	CMD=$(which $1)
 	shift
