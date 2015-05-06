@@ -11,13 +11,13 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	#udevadm trigger
 
-	systemctl enable /etc/systemd/system/launch.service
+	systemctl enable /etc/systemd/system/launch.service > /dev/null
 	alias resin-app-logs='journalctl -u launch'
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 
 	echo "Starting init..."
-	exec /sbin/init --log-target=null --log-level=0
+	exec /sbin/init --log-target=null --log-level=err
 else
 	CMD=$(which $1)
 	shift
