@@ -6,9 +6,8 @@ Before=udev-trigger.service
 WorkingDirectory=/usr/bin/
 EnvironmentFile=/etc/docker.env
 ExecStart=/etc/resinApp.cmd
-StandardInput=tty-force
-StandardOutput=tty-force
-StandardError=tty-force
+StandardOutput=tty
+StandardError=tty
 TTYPath=/dev/console
 
 
