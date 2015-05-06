@@ -11,12 +11,9 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	#udevadm trigger
 
-	systemctl -q enable /etc/systemd/system/launch.service
-	alias resin-app-logs='journalctl -u launch'
+	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
-	tty
-	echo "Starting init..."
 	exec /sbin/init quiet
 else
 	CMD=$(which $1)
