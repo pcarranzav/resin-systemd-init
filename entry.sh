@@ -11,7 +11,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	#udevadm trigger
 
-	systemctl enable /etc/systemd/system/launch.service > /dev/null
+	systemctl -q enable /etc/systemd/system/launch.service
 	alias resin-app-logs='journalctl -u launch'
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
