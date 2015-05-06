@@ -13,6 +13,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
 
+	cat /etc/resinApp.cmd
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 	exec /sbin/init quiet
 else
