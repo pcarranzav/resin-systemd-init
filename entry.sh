@@ -15,7 +15,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
-	exec /sbin/init quiet
+	exec /sbin/init
 else
 	CMD=$(which $1)
 	shift
