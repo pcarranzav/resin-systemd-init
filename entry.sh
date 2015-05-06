@@ -13,6 +13,13 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
 
+	echo system
+	ls -l /etc/systemd/system
+	echo basic
+	ls -l /etc/systemd/system/basic.target.wants
+	echo multi
+	ls -l /etc/systemd/system/multi-user.target.wants
+
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 	exec /sbin/init quiet
 else
