@@ -23,7 +23,8 @@ RUN systemctl mask \
 
     getty.target \
     graphical.target
-    
+
+RUN rm -f /lib/systemd/system/*.wants/*udev*    
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
