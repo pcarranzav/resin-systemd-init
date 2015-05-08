@@ -5,6 +5,9 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "${GREEN}Systemd init system enabled."
 	env > /etc/docker.env
 
+	# Mount dev as devtmpfs
+	mount -t devtmpfs none /dev
+
 	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
 	chmod +x /etc/resinApp.cmd
 

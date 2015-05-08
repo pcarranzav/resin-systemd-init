@@ -19,12 +19,9 @@ RUN systemctl mask \
     getty@.service \
     systemd-logind.service \
     systemd-remount-fs.service \
-    systemd-udevd.service \
 
     getty.target \
-    graphical.target
-
-RUN rm -f /lib/systemd/system/*.wants/*udev*    
+    graphical.target  
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
