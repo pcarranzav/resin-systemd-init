@@ -5,9 +5,6 @@ if [ "$INITSYSTEM" = "on" ]; then
 	echo -e "${GREEN}Systemd init system enabled."
 	env > /etc/docker.env
 
-	# Mount dev as devtmpfs
-	mount -t devtmpfs none /dev
-
 	echo -e "#!/bin/bash\n exec $@" > /etc/resinApp.cmd
 	chmod +x /etc/resinApp.cmd
 
@@ -16,6 +13,7 @@ if [ "$INITSYSTEM" = "on" ]; then
 	#udevadm trigger
 
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
+	systemctl --quiet enable /etc/systemd/system/devtmpfs.mount &> /dev/null
 
 	#systemctl enable /etc/systemd/system/udev-trigger.service
 	exec /sbin/init quiet

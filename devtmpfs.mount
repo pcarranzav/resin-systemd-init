@@ -1,0 +1,11 @@
+[Unit]
+Description=Device Directory
+DefaultDependencies=no
+
+[Mount]
+What=none
+Where=/dev
+Type=devtmpfs
+
+[Install]
+WantedBy=basic.target
