@@ -9,7 +9,8 @@ if [ "$INITSYSTEM" = "on" ]; then
 	chmod +x /etc/resinApp.cmd
 
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
-	systemctl --quiet enable /etc/systemd/system/dev.mount &> /dev/null
+
+	mount -t devtmpfs none /dev
 
 	exec /sbin/init quiet
 else
