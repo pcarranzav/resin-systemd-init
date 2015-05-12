@@ -1,6 +1,7 @@
 [Unit]
 Description=Device Directory
 DefaultDependencies=no
+Before=launch.service
 
 [Mount]
 What=none

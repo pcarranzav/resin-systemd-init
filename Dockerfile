@@ -25,7 +25,7 @@ RUN systemctl mask \
 
 COPY entry.sh /usr/bin/entry.sh    
 COPY launch.service /etc/systemd/system/launch.service
-COPY devtmpfs.mount /etc/systemd/system/devtmpfs.mount
+COPY dev.mount /etc/systemd/system/dev.mount
 
 ENTRYPOINT ["/usr/bin/entry.sh"]
 
