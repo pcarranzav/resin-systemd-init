@@ -10,8 +10,10 @@ if [ "$INITSYSTEM" = "on" ]; then
 
 	systemctl --quiet enable /etc/systemd/system/launch.service &> /dev/null
 
+	echo Hi > /dev/console
 	mount -t devtmpfs none /dev
-
+	echo Bye > /dev/console
+	
 	exec /sbin/init quiet
 else
 	CMD=$(which $1)
