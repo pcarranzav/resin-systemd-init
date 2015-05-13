@@ -7,7 +7,7 @@ EnvironmentFile=/etc/docker.env
 ExecStart=/etc/resinApp.cmd
 StandardOutput=tty
 StandardError=tty
-TTYPath=/dev/console
+TTYPath=/dev/pts/0
 
 
 [Install]
